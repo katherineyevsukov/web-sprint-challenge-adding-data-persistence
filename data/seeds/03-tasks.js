@@ -1,6 +1,7 @@
 exports.seed = function(knex, Promise) {
   return knex('projects').insert([   
-    { project_name: "Create an API", project_description: "make a backend using node and express", project_completed: true},
-    { project_name: "Make a React App", project_description: "make a front end", project_completed: false}
+    { task_description: "Write Endpoints", task_notes: "don't forget to reformat data", task_completed: false, project_id: 2},
+    { task_description: "Host on Heroku", task_notes: "make sure to add env variables", task_completed: false, project_id: 2},
+    { task_description: "Host on Vercel", task_notes: "create a Vercel account", task_completed: true, project_id: 1},
   ]);
 };
