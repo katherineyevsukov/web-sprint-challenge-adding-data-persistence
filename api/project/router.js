@@ -1,6 +1,7 @@
 // build your `/api/projects` router here
 const router = require("express").Router();
 const Project = require("./model");
+const { validateProject } = require('./middleware')
 
 router.get("/", async (req, res, next) => {
   try {
@@ -11,7 +12,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", validateProject, async (req, res, next) => {
   try {
     const newProject = await Project.create(req.body);
     res.status(201).json(newProject);
