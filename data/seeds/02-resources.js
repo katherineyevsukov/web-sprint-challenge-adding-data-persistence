@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex('projects').insert([   
+  return knex('resources').insert([   
     { resource_name: "Tailwind CSS", resource_description: "style using using a library"},
     { resource_name: "Global State Management", resource_description: "Redux vs. Hooks"},
     { resource_name: "RDBMS", resource_description: "relational database management sytems"},
