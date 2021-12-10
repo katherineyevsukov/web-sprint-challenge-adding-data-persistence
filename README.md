@@ -113,5 +113,10 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 Relational databases store data using relational tables. SQL is the standard language that most of these types of databases use to query, manipulate and aggregate the data. While the database holds the data, with SQL we can turn it into usable information.
 
 2. Why do tables need a Primary Key?
+Primary keys are the unique identifier for a row of data and absolutely every table should contain a primary key column. Primary keys also help us link tables together as they can become foreign keys on another table.
+
 3. What is the name given to a table column that references the Primary Key on another table?
+A foreign key points to the primary key on another table.
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+An appointment table describes a many to many relationship and is needed when multiple records in one table may be associated with multiple records in another table (for example, doctors and patients--a doctor may have many patients and a patient may also have multiple doctors). The table that holds records of these relationships would have a primary key column as well as foreign keys pointing to data involved in the many-to-many relationship. Having this type of intermediary table is is critical for database normalization.
