@@ -23,4 +23,19 @@ async function getAll() {
   return tasks;
 }
 
-module.exports = { getAll };
+async function getById(id) {
+    const [task] = await db("tasks").where("task_id", id);
+
+    task.task_completed = !!task.task_completed;
+
+    return task;
+  }
+
+async function create(task) {
+    const [id] = await db("tasks").insert(task);
+  
+    const created = await getById(id);
+    return created;
+  }
+
+module.exports = { getAll, create };
