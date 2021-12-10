@@ -1,7 +1,7 @@
 // build your `/api/projects` router here
 const router = require("express").Router();
 const Project = require("./model");
-const { validateProject } = require('./middleware')
+const { validateProject } = require("./middleware");
 
 router.get("/", async (req, res, next) => {
   try {
