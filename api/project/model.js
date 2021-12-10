@@ -13,9 +13,11 @@ async function getAll() {
 
 async function getById(id) {
   const [project] = await db("projects").where("project_id", id);
-
-  project.project_completed = !!project.project_completed;
   
+  if (project) {
+    project.project_completed = !!project.project_completed;
+  }
+
   return project;
 }
 
@@ -25,4 +27,4 @@ async function create(project) {
   const created = await getById(id);
   return created;
 }
-module.exports = { getAll, create };
+module.exports = { getAll, create, getById };
